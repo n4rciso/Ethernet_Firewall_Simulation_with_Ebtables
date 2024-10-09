@@ -38,3 +38,21 @@ The aim of this project is to create a laboratory focused on Ethernet firewalls 
 7. **VLAN Tagging with Ebtables**
    - Introduction to VLAN (Virtual Local Area Network) concepts for enhanced traffic segmentation.
    - Techniques used for correcting VLAN tagging issues using ebtables, ensuring that packets are correctly tagged and isolated within their designated VLANs, even in the presence of configuration errors.
+
+## Project Files
+
+The project includes several shell scripts, each corresponding to a specific chapter in the documentation. Below is a brief description of each script, all of which can be found in the `Code/` directory:
+
+1. **[3_setup.sh](Code/3_setup.sh)**: This script sets up the virtual network environment, configuring Linux namespaces, virtual Ethernet pairs, and bridges necessary to simulate the network for the experiments.
+
+2. **[3_delete.sh](Code/3_delete.sh)**: Used to clean up the environment by removing all the configurations created during the setup process, including namespaces, bridges, and virtual Ethernet interfaces.
+
+3. **[4_mac_filtering.sh](Code/4_mac_filtering.sh)**: Contains commands to implement MAC filtering using ebtables. It includes both Allow List and Deny List configurations to control which devices can communicate within the network.
+
+4. **[4_mac_spoofing.sh](Code/4_mac_spoofing.sh)**: Demonstrates the process of MAC address spoofing and implements countermeasures using IP-MAC binding techniques to prevent unauthorized devices from impersonating legitimate ones.
+
+5. **[5_arp_spoofing.sh](Code/5_arp_spoofing.sh)**: Focuses on ARP spoofing attacks, showing how to execute them and how to mitigate these attacks using various ebtables rules, such as static ARP entries and selective ARP reply filtering.
+
+6. **[6_mac_flooding.sh](Code/6_mac_flooding.sh)**: Simulates a MAC flooding attack that aims to overwhelm the MAC address table of a switch or bridge, along with techniques to prevent this attack using rate limiting with ebtables.
+
+7. **[7_vlan_tagging.sh](Code/7_vlan_tagging.sh)**: Covers VLAN tagging configurations and how to handle VLAN-based network segmentation issues using ebtables to ensure that traffic is correctly tagged and isolated.
